@@ -1,0 +1,60 @@
+/* Styles t7he button in the reporting dashboard */
+.button {
+  background-color: #006fcf;
+  color: #fff;
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  padding: 7px 14px;
+  border-radius: 5px;
+}
+
+/* sets toast font size */
+.toast {
+  font-size: 14px;
+}
+
+/* this is to hide the multi select checkbox in react data grids */
+[for|="select-all-checkbox"] {
+  visibility: hidden;
+}
+
+/* This is set to hide the drag handle in the grid */
+.drag-handle {
+  display: none;
+}
+
+/* This is set to increase the size of the grid toolbar */
+.tools {
+  height: 65px;
+}
+
+/* this increases the space between grid header text and the grid*/
+.react-grid-HeaderCell {
+  font-size: 14px !important;
+}
+
+/* This is set to reduce the the whitespace around the status bar to make the component consume less space */
+.MuiStep-horizontal {
+  height: 25px;
+  top: 0;
+}
+
+/* This is set to make the data grid inside of it's scrollbar not get clipped */
+.MuiCardContent-root {
+  width: 98%;
+}
+
+/* This is set to varigate colors in the data grids */
+.react-grid-Row--even .react-grid-Cell {
+  background-color: #c8c9c7;
+}
+
+/* This is set to style the bootstrap buttons that react data grid uses */
+.btn {
+  background-color: #006fcf !important;
+  color: #ffffff !important;
+}
+
+/* This is set to reduce the default fontsize of the grid to allow for better column spacing */
+.react-grid-Cell {
+  font-size: 14px !important;
+}

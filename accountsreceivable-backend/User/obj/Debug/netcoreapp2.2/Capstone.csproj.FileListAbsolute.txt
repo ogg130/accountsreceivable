@@ -1,0 +1,14 @@
+C:\Users\Robert\source\repos\Capstone\bin\Debug\netcoreapp2.2\User.deps.json
+C:\Users\Robert\source\repos\Capstone\bin\Debug\netcoreapp2.2\User.runtimeconfig.json
+C:\Users\Robert\source\repos\Capstone\bin\Debug\netcoreapp2.2\User.runtimeconfig.dev.json
+C:\Users\Robert\source\repos\Capstone\bin\Debug\netcoreapp2.2\User.dll
+C:\Users\Robert\source\repos\Capstone\bin\Debug\netcoreapp2.2\User.pdb
+C:\Users\Robert\source\repos\Capstone\obj\Debug\netcoreapp2.2\Capstone.csprojAssemblyReference.cache
+C:\Users\Robert\source\repos\Capstone\obj\Debug\netcoreapp2.2\Capstone.csproj.CoreCompileInputs.cache
+C:\Users\Robert\source\repos\Capstone\obj\Debug\netcoreapp2.2\Capstone.RazorAssemblyInfo.cache
+C:\Users\Robert\source\repos\Capstone\obj\Debug\netcoreapp2.2\Capstone.RazorAssemblyInfo.cs
+C:\Users\Robert\source\repos\Capstone\obj\Debug\netcoreapp2.2\Capstone.AssemblyInfoInputs.cache
+C:\Users\Robert\source\repos\Capstone\obj\Debug\netcoreapp2.2\Capstone.AssemblyInfo.cs
+C:\Users\Robert\source\repos\Capstone\obj\Debug\netcoreapp2.2\Capstone.RazorTargetAssemblyInfo.cache
+C:\Users\Robert\source\repos\Capstone\obj\Debug\netcoreapp2.2\User.dll
+C:\Users\Robert\source\repos\Capstone\obj\Debug\netcoreapp2.2\User.pdb

@@ -1,0 +1,24 @@
+{
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:50990",
+      "sslPort": 44373
+    }
+  },
+  "$schema": "http://json.schemastore.org/launchsettings.json",
+  "profiles": {
+    "Statuses": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "api/v1/statushistory",
+      "environmentVariables": {
+        "APIPASSWORD": "p@ssw0rd1",
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "APIUSER": "ap1us3r"
+      },
+      "applicationUrl": "https://localhost:4001;http://localhost:4000"
+    }
+  }
+}

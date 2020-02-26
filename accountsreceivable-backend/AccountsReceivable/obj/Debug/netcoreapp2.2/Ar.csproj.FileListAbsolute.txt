@@ -1,0 +1,14 @@
+C:\Users\Robert\source\repos\Capstone\AccountsReceivable\obj\Debug\netcoreapp2.2\Ar.csprojAssemblyReference.cache
+C:\Users\Robert\source\repos\Capstone\AccountsReceivable\obj\Debug\netcoreapp2.2\Ar.csproj.CoreCompileInputs.cache
+C:\Users\Robert\source\repos\Capstone\AccountsReceivable\obj\Debug\netcoreapp2.2\Ar.RazorAssemblyInfo.cache
+C:\Users\Robert\source\repos\Capstone\AccountsReceivable\obj\Debug\netcoreapp2.2\Ar.RazorAssemblyInfo.cs
+C:\Users\Robert\source\repos\Capstone\AccountsReceivable\obj\Debug\netcoreapp2.2\Ar.AssemblyInfoInputs.cache
+C:\Users\Robert\source\repos\Capstone\AccountsReceivable\obj\Debug\netcoreapp2.2\Ar.AssemblyInfo.cs
+C:\Users\Robert\source\repos\Capstone\AccountsReceivable\bin\Debug\netcoreapp2.2\Ar.deps.json
+C:\Users\Robert\source\repos\Capstone\AccountsReceivable\bin\Debug\netcoreapp2.2\Ar.runtimeconfig.json
+C:\Users\Robert\source\repos\Capstone\AccountsReceivable\bin\Debug\netcoreapp2.2\Ar.runtimeconfig.dev.json
+C:\Users\Robert\source\repos\Capstone\AccountsReceivable\bin\Debug\netcoreapp2.2\Ar.dll
+C:\Users\Robert\source\repos\Capstone\AccountsReceivable\bin\Debug\netcoreapp2.2\Ar.pdb
+C:\Users\Robert\source\repos\Capstone\AccountsReceivable\obj\Debug\netcoreapp2.2\Ar.RazorTargetAssemblyInfo.cache
+C:\Users\Robert\source\repos\Capstone\AccountsReceivable\obj\Debug\netcoreapp2.2\Ar.dll
+C:\Users\Robert\source\repos\Capstone\AccountsReceivable\obj\Debug\netcoreapp2.2\Ar.pdb

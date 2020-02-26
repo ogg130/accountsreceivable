@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="AccountsReceivable.Controllers.ArController">
+    <Position X="14.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EIUAMBBABAgEBAAIACAAAQAAgCgAAgEkAAAACAAAQAA=</HashCode>
+      <FileName>Controllers\ArController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AccountsReceivable.Controllers.ScheduleAssetController">
+    <Position X="16" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAIAAAAABAAAAAAAAAAAAAAAAIABAAAAEAAAAAA=</HashCode>
+      <FileName>Controllers\ScheduleAssetController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AccountsReceivable.Controllers.ScheduleTypeController">
+    <Position X="16" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAAAAAAAIEAAIQAAAAAAAE=</HashCode>
+      <FileName>Controllers\ScheduleTypeController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AccountsReceivable.Data.Model.Ar">
+    <Position X="10" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAgEEAAACAAQCAIAAACgAAIAAAAAIQAggEEAKIA=</HashCode>
+      <FileName>Data\Model\Ar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AccountsReceivable.Data.Model.ArDto">
+    <Position X="12.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABiEAAAAgAAQCAIAAACgAAIAIAAAIQAggEAAKIA=</HashCode>
+      <FileName>Data\Model\Ar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AccountsReceivable.Data.Model.BasicAuthAttribute">
+    <Position X="7.25" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Model\BasicAuthAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AccountsReceivable.Data.Model.BasicAuthFilter" BaseTypeListCollapsed="true">
+    <Position X="7.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEQAAAAAAAAAAAAAAAAAAAAAAACAAABAAAAAAAAAA=</HashCode>
+      <FileName>Data\Model\BasicAuthFilter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="AccountsReceivable.Data.Model.Context">
+    <Position X="4.25" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAAAAAAAAAAAAEAIAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Model\Context.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AccountsReceivable.Data.Model.CostCenter">
+    <Position X="6.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAEAAgAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Data\Model\CostCenter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AccountsReceivable.Data.Model.DbInitializer">
+    <Position X="4.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Model\DbInitializer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AccountsReceivable.Data.Model.Role">
+    <Position X="6.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAgAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Data\Model\Role.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AccountsReceivable.Data.Model.ScheduleAsset">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <InheritanceLine Type="AccountsReceivable.Data.Model.TimeStampable" FixedToPoint="true">
+      <Path>
+        <Point X="5.25" Y="1.796" />
+        <Point X="5.25" Y="2.125" />
+        <Point X="2.24" Y="2.125" />
+        <Point X="2.24" Y="5.062" />
+        <Point X="2" Y="5.062" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAgAAAAAAA=</HashCode>
+      <FileName>Data\Model\ScheduleAsset.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AccountsReceivable.Data.Model.ScheduleType">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAQgAAEAAgAAAAAAA=</HashCode>
+      <FileName>Data\Model\ScheduleType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AccountsReceivable.Data.Model.Site">
+    <Position X="4.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAAAgAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Model\Site.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AccountsReceivable.Data.Model.StatusList">
+    <Position X="8.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAEAAAhAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Model\Status.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AccountsReceivable.Data.Model.TimeStampable">
+    <Position X="4.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Model\TimeStampable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AccountsReceivable.Data.Model.User">
+    <Position X="2.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAECAAAAACAAAAQAgAAgAAAAAAAQAAAAAAAAg=</HashCode>
+      <FileName>Data\Model\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AccountsReceivable.Data.Model.Phonenumber">
+    <Position X="4.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAEAAAAgAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Data\Model\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AccountsReceivable.Services.HttpClientSvc" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Services\HttpClientSvc.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="AccountsReceivable.Program">
+    <Position X="0.5" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AccountsReceivable.Startup">
+    <Position X="0.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAAAAAABAAAAAAAAAAAAAgAAACAAAAAA=</HashCode>
+      <FileName>Startup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="AccountsReceivable.Services.IHttpClientSvc">
+    <Position X="2.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Services\IHttpClientSvc.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

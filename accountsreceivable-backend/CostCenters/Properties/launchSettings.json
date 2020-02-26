@@ -1,0 +1,24 @@
+{
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:54287",
+      "sslPort": 44344
+    }
+  },
+  "$schema": "http://json.schemastore.org/launchsettings.json",
+  "profiles": {
+    "CostCenters": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "api/v1/costcenter",
+      "environmentVariables": {
+        "APIPASSWORD": "p@ssw0rd1",
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "APIUSER": "ap1us3r"
+      },
+      "applicationUrl": "https://localhost:9001;http://localhost:9000"
+    }
+  }
+}
