@@ -23,7 +23,7 @@ namespace AccountsReceivable.Controllers
 
         // GET: api/v1/scheduleTypes
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<ScheduleType>>> GetType()
+        public async Task<ActionResult<IEnumerable<ScheduleType>>> GetScheduleType()
         {
             return await _context.ScheduleType.ToListAsync();
         }
@@ -31,7 +31,7 @@ namespace AccountsReceivable.Controllers
         // GET: api/v1/scheduleType/1 or
         // GET: api/v1/scheduleType/1?asset=true - get by ScheduleAssetId
         [HttpGet("{id}")]
-        public async Task<ActionResult<List<ScheduleType>>> GetType(int id, bool? asset = false)
+        public async Task<ActionResult<List<ScheduleType>>> GetScheduleType(int id, bool? asset = false)
         {
             var scheduleTypes = new List<ScheduleType>();
 
@@ -54,7 +54,7 @@ namespace AccountsReceivable.Controllers
 
         // GET: api/v1/scheduleType/1/value/123456.01
         [HttpGet("{id}/value/{amount}")]
-        public async Task<ActionResult<List<decimal>>> GetType(int id, decimal amount)
+        public async Task<ActionResult<List<decimal>>> GetShcheduleType(int id, decimal amount)
         {
             // Given the schedule id, find its term in years and then calculate the average of the amount / terms
             // to display in the uis depreciation schedule

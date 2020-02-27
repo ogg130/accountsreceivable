@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using AccountsReceivable.Data.Model;
 using AccountsReceivable.Services;
 using Newtonsoft.Json;
+using Microsoft.Extensions.Logging;
 
 namespace AccountsReceivable.Controllers
 {
@@ -26,14 +27,15 @@ namespace AccountsReceivable.Controllers
         private static Dictionary<int, string> siteList = new Dictionary<int, string>();
         private static Dictionary<int, string> assetList = new Dictionary<int, string>();
         private static Dictionary<int, string> typeList = new Dictionary<int, string>();
+        private readonly ILogger _logger;
 
-        public ArController(Context context, IHttpClientSvc httpClientSvc)
+
+        public ArController(Context context, IHttpClientSvc httpClientSvc, ILogger<ArController> logger)
         {
             _context = context;
             _httpClientSvc = httpClientSvc;
+            _logger = logger;
         }
-
-
 
         [HttpGet("report/1/owner/{id}")]
         public async Task<ActionResult<List<ArDto>>> GetReport(int id)
@@ -241,154 +243,253 @@ namespace AccountsReceivable.Controllers
 
         private async Task<Dictionary<int, string>> GetAssetList(string uri)
         {
-            var response = await _httpClientSvc.Client.GetAsync(uri);
-
-            if (!response.IsSuccessStatusCode) return null;
-
-            var responseString = response.Content.ReadAsStringAsync().Result;
-
-            var deserializedObject = JsonConvert.DeserializeObject<List<ScheduleAsset>>(responseString);
-
-            var scheduleAssets = new Dictionary<int, string>();
-
-            foreach (var scheduleAsset in deserializedObject)
+            try
             {
-                scheduleAssets.Add(scheduleAsset.ScheduleAssetID, $"{scheduleAsset.Value}");
+                var response = await _httpClientSvc.Client.GetAsync(uri);
+
+                if (!response.IsSuccessStatusCode) return null;
+
+                var responseString = response.Content.ReadAsStringAsync().Result;
+
+                var deserializedObject = JsonConvert.DeserializeObject<List<ScheduleAsset>>(responseString);
+
+                var scheduleAssets = new Dictionary<int, string>();
+
+                foreach (var scheduleAsset in deserializedObject)
+                {
+                    scheduleAssets.Add(scheduleAsset.ScheduleAssetID, $"{scheduleAsset.Value}");
+                }
+                return scheduleAssets;
             }
-            return scheduleAssets;
+            catch (NullReferenceException)
+            {
+                _logger.LogDebug($"{DateTime.Now} - Status list could not be retrieved.");//log not found
+                return null;
+            }
+            catch (JsonSerializationException)
+            {
+                _logger.LogDebug($"{DateTime.Now} - Status list failed to deserialize."); // Log to /var/log message in linux
+                return null;
+            }
         }
 
         private async Task<Dictionary<int, string>> GetTypeList(string uri)
         {
-            var response = await _httpClientSvc.Client.GetAsync(uri);
-
-            if (!response.IsSuccessStatusCode) return null;
-
-            var responseString = response.Content.ReadAsStringAsync().Result;
-
-            var deserializedObject = JsonConvert.DeserializeObject<List<ScheduleType>>(responseString);
-
-            var scheduleTypes = new Dictionary<int, string>();
-
-            foreach (var scheduleType in deserializedObject)
+            try
             {
-                scheduleTypes.Add(scheduleType.ScheduleTypeID, $"{scheduleType.Value}");
+
+                var response = await _httpClientSvc.Client.GetAsync(uri);
+
+                if (!response.IsSuccessStatusCode) return null;
+
+                var responseString = response.Content.ReadAsStringAsync().Result;
+
+                var deserializedObject = JsonConvert.DeserializeObject<List<ScheduleType>>(responseString);
+
+                var scheduleTypes = new Dictionary<int, string>();
+
+                foreach (var scheduleType in deserializedObject)
+                {
+                    scheduleTypes.Add(scheduleType.ScheduleTypeID, $"{scheduleType.Value}");
+                }
+                return scheduleTypes;
             }
-            return scheduleTypes;
+
+            catch (NullReferenceException)
+            {
+                _logger.LogDebug($"{DateTime.Now} - Status list could not be retrieved.");//log not found
+                return null;
+            }
+            catch (JsonSerializationException)
+            {
+                _logger.LogDebug($"{DateTime.Now} - Status list failed to deserialize."); // Log to /var/log message in linux
+                return null;
+            }
         }
 
         private async Task<Dictionary<int, string>> GetCostCenterList(string uri)
         {
-            var response = await _httpClientSvc.Client.GetAsync(uri);
-
-            if (!response.IsSuccessStatusCode) return null;
-
-            var responseString = response.Content.ReadAsStringAsync().Result;
-
-            var deserializedObject = JsonConvert.DeserializeObject<List<CostCenter>>(responseString);
-
-            var costCenters = new Dictionary<int, string>();
-
-            foreach (var costCenter in deserializedObject)
+            try
             {
-                costCenters.Add(costCenter.Id, $"{costCenter.Value} ({costCenter.Description})");
+                var response = await _httpClientSvc.Client.GetAsync(uri);
+
+                if (!response.IsSuccessStatusCode) return null;
+
+                var responseString = response.Content.ReadAsStringAsync().Result;
+
+                var deserializedObject = JsonConvert.DeserializeObject<List<CostCenter>>(responseString);
+
+                var costCenters = new Dictionary<int, string>();
+
+                foreach (var costCenter in deserializedObject)
+                {
+                    costCenters.Add(costCenter.Id, $"{costCenter.Value} ({costCenter.Description})");
+                }
+                return costCenters;
             }
-            return costCenters;
+            catch (NullReferenceException)
+            {
+                _logger.LogDebug($"{DateTime.Now} - Status list could not be retrieved.");//log not found
+                return null;
+            }
+            catch (JsonSerializationException)
+            {
+                _logger.LogDebug($"{DateTime.Now} - Status list failed to deserialize."); // Log to /var/log message in linux
+                return null;
+            }
         }
 
         private async Task<Dictionary<int, string>> GetDirectorList(string uri)
         {
-            var response = await _httpClientSvc.Client.GetAsync(uri);
-
-            if (!response.IsSuccessStatusCode) return null;
-
-            var responseString = response.Content.ReadAsStringAsync().Result;
-
-            var deserializedObject = JsonConvert.DeserializeObject<List<User>>(responseString);
-
-            var directors = new Dictionary<int, string>();
-
-            foreach (var director in deserializedObject)
+            try
             {
-                for (var i = 0; i < director.Roles.Count; ++i)
+
+
+                var response = await _httpClientSvc.Client.GetAsync(uri);
+
+                if (!response.IsSuccessStatusCode) return null;
+
+                var responseString = response.Content.ReadAsStringAsync().Result;
+
+                var deserializedObject = JsonConvert.DeserializeObject<List<User>>(responseString);
+
+                var directors = new Dictionary<int, string>();
+
+                foreach (var director in deserializedObject)
                 {
-                    if (director.Roles[i].Value == "DIRECTOR")
+                    for (var i = 0; i < director.Roles.Count; ++i)
                     {
-                        directors.Add(director.UserID, $"{director.FirstName} {director.LastName}");
+                        if (director.Roles[i].Value == "DIRECTOR")
+                        {
+                            directors.Add(director.UserID, $"{director.FirstName} {director.LastName}");
+
+                        }
 
                     }
 
                 }
-
+                return directors;
             }
-            return directors;
+
+            catch (NullReferenceException)
+            {
+                _logger.LogDebug($"{DateTime.Now} - Status list could not be retrieved.");//log not found
+                return null;
+            }
+            catch (JsonSerializationException)
+            {
+                _logger.LogDebug($"{DateTime.Now} - Status list failed to deserialize."); // Log to /var/log message in linux
+                return null;
+            }
         }
 
         private async Task<Dictionary<int, string>> GetOwnerList(string uri)
-        {
-            var response = await _httpClientSvc.Client.GetAsync(uri);
-
-            if (!response.IsSuccessStatusCode) return null;
-
-            var responseString = response.Content.ReadAsStringAsync().Result;
-
-            var deserializedObject = JsonConvert.DeserializeObject<List<User>>(responseString);
-
-            var owners = new Dictionary<int, string>();
-
-
-            foreach (var owner in deserializedObject)
+        {try
             {
-                for (var i = 0; i < owner.Roles.Count; ++i) 
+                var response = await _httpClientSvc.Client.GetAsync(uri);
+
+                if (!response.IsSuccessStatusCode) return null;
+
+                var responseString = response.Content.ReadAsStringAsync().Result;
+
+                var deserializedObject = JsonConvert.DeserializeObject<List<User>>(responseString);
+
+                var owners = new Dictionary<int, string>();
+
+
+                foreach (var owner in deserializedObject)
                 {
-                    if (owner.Roles[i].Value == "OWNER")
+                    for (var i = 0; i < owner.Roles.Count; ++i)
                     {
-                        owners.Add(owner.UserID, $"{owner.FirstName} {owner.LastName}");
+                        if (owner.Roles[i].Value == "OWNER")
+                        {
+                            owners.Add(owner.UserID, $"{owner.FirstName} {owner.LastName}");
+
+                        }
 
                     }
 
-                } 
-
+                }
+                return owners;
             }
-            return owners;
+
+            catch (NullReferenceException)
+            {
+                _logger.LogDebug($"{DateTime.Now} - Status list could not be retrieved.");//log not found
+                return null;
+            }
+            catch (JsonSerializationException)
+            {
+                _logger.LogDebug($"{DateTime.Now} - Status list failed to deserialize."); // Log to /var/log message in linux
+                return null;
+            }
         }
 
         private async Task<Dictionary<int, string>> GetStatusList(string uri)
         {
-            var response = await _httpClientSvc.Client.GetAsync(uri);
-
-            if (!response.IsSuccessStatusCode) return null;
-
-            var responseString = response.Content.ReadAsStringAsync().Result;
-
-            var deserializedObject = JsonConvert.DeserializeObject<List<StatusList>>(responseString);
-
-            var statuses = new Dictionary<int, string>();
-
-            foreach (var status in deserializedObject)
+            try
             {
-                statuses.Add(status.Id, $"{status.Status}");
+                var response = await _httpClientSvc.Client.GetAsync(uri);
+
+                if (!response.IsSuccessStatusCode) return null;
+
+                var responseString = response.Content.ReadAsStringAsync().Result;
+
+                var deserializedObject = JsonConvert.DeserializeObject<List<StatusList>>(responseString);
+
+                var statuses = new Dictionary<int, string>();
+
+                foreach (var status in deserializedObject)
+                {
+                    statuses.Add(status.Id, $"{status.Status}");
+                }
+                return statuses;
             }
-            return statuses;
+
+            catch (NullReferenceException)
+            {
+                _logger.LogDebug($"{DateTime.Now} - Status list could not be retrieved.");//log not found
+                return null;
+            }
+            catch (JsonSerializationException)
+            {
+                _logger.LogDebug($"{DateTime.Now} - Status list failed to deserialize."); // Log to /var/log message in linux
+                return null;
+            }
         }
 
         private async Task<Dictionary<int, string>> GetSiteList(string uri)
         {
-            var response = await _httpClientSvc.Client.GetAsync(uri);
-
-            if (!response.IsSuccessStatusCode) return null;
-
-            var responseString = response.Content.ReadAsStringAsync().Result;
-
-            var deserializedObject = JsonConvert.DeserializeObject<List<Site>>(responseString);
-
-            var sites = new Dictionary<int, string>();
-
-            foreach (var site in deserializedObject)
+            try
             {
-                sites.Add(site.SiteID, $"{site.Code}");
+
+                var response = await _httpClientSvc.Client.GetAsync(uri);
+
+                if (!response.IsSuccessStatusCode) return null;
+
+                var responseString = response.Content.ReadAsStringAsync().Result;
+
+                var deserializedObject = JsonConvert.DeserializeObject<List<Site>>(responseString);
+
+                var sites = new Dictionary<int, string>();
+
+                foreach (var site in deserializedObject)
+                {
+                    sites.Add(site.SiteID, $"{site.Code}");
+                }
+                return sites;
             }
-            return sites;
+
+            catch (NullReferenceException)
+            {
+                _logger.LogDebug($"{DateTime.Now} - Status list could not be retrieved.");//log not found
+                return null;
+            }
+            catch (JsonSerializationException)
+            {
+                _logger.LogDebug($"{DateTime.Now} - Status list failed to deserialize."); // Log to /var/log message in linux
+                return null;
+            }
         }
 
 
